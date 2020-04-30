@@ -157,4 +157,4 @@ colors
 # Allow for functions in the prompt.
 
 # BRoot
-source /home/niclas/.config/broot/launcher/bash/br
+#source /home/niclas/.config/broot/launcher/bash/br
