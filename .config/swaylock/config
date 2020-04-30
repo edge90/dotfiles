@@ -1,0 +1,14 @@
+color=000000
+image=~/.local/share/sway/mario.jpg
+scaling=fit
+ignore-empty-password
+show-failed-attempts
+hide-keyboard-layout
+indicator-caps-lock
+indicator-radius=300
+indicator-thickness=10
+inside-color=00000000
+key-hl-color=FFFFFF88
+bs-hl-color=000000AA
+line-color=000000
+ring-color=88888888
