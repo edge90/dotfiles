@@ -1,0 +1,277 @@
+# sway / i3 configuration file
+
+set $mod Mod4
+set $alt Mod1
+set $term alacritty
+set $editor nvim
+
+set $black       #000000
+set $darkgray    #212121
+set $red         #fb4934
+set $darkred     #cc241d
+set $green       #b8bb26
+set $darkgreen   #98971a
+set $yellow      #fabd2f
+set $darkyellow  #d79921
+set $blue        #83a598
+set $darkblue    #458588
+set $magenta     #d3869b
+set $darkmagenta #b16286
+set $cyan        #8ec07c
+set $darkcyan    #689d6a
+set $white       #ebdbb2
+set $darkwhite   #a89984
+set $transparent #00000000
+
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $ws1  "1:term"
+set $ws2  "2:web"
+set $ws3  "3:code"
+set $ws4  "4:4"
+set $ws5  "5:5"
+set $ws6  "6:chat"
+set $ws7  "7:docs"
+set $ws8  "8:graphics"
+set $ws9  "9:music"
+set $ws10 "10:misc"
+
+# @todo move scripts to ~/.bin/scripts or something
+set $menu $term --class "popup-term-center" --title "Launcher" -e "$HOME/.local/bin/launcher.sh"
+set $searcher $term --class "popup-term-top" --title "Search" -e "$HOME/.local/bin/searcher.sh"
+set $python_shell $term --class "popup-term-max" --title "Python shell" -e "$HOME/.local/bin/python_shell.sh"
+set $broot $term --class "popup-term-max" --title "Explore" -e "$HOME/.local/bin/explorer.sh" &
+set $install_pkg $term --class "popup-term-top" --title "Install package" -e "$HOME/.local/bin/install_pkg.sh"
+set $uninstall_pkg $term --class "popup-term-top" --title "Uninstall package" -e "$HOME/.local/bin/uninstall_pkg.sh"
+set $screenrec $term --class "popup-term-top" --title "Screen recorder" -e "$HOME/.local/bin/screenrecorder.sh"
+set $screenrec_selection $term --class "popup-term-top" --title "Partial screen recorder" -e "$HOME/.local/bin/screenrecorder_selection.sh"
+
+# Popups
+set $popup-base floating enable, sticky enable, border pixel 4px,
+set $popup-center $popup-base resize set 50ppt 50ppt
+set $popup-max $popup-base resize set 100ppt 100ppt
+set $popup-top $popup-base resize set 100ppt 50ppt, move window to position 0 0
+
+output "*" bg "$HOME/.local/share/sway/mario.jpg" fit
+
+output DVI-I-1 {
+  resolution 1920x1080
+  pos 0 0
+  scale 1.0
+}
+
+input type:keyboard {
+  xkb_layout se
+  xkb_options caps:escape
+  xkb_numlock enable
+}
+
+input type:touchpad {
+  tap enabled
+  tap_button_map lrm
+  drag enabled
+  click_method clickfinger
+  scroll_method two_finger
+  natural_scroll disabled
+  dwt disabled
+}
+
+gaps inner 4
+gaps outer 4
+
+#workspace_auto_back_and_forth yes
+font "Noto Sans" 20 # @todo
+
+#                       BORDER      BACKGROUND  TEXT   INDICATOR   CHILD_BORDER
+client.focused          $yellow     $yellow     $black $yellow     $yellow
+client.unfocused        $black      $black      $white $black      $white
+client.focused_inactive $black      $black      $white $black      $black
+client.urgent           $darkred    $darkred    $black $darkred    $darkred
+client.background       $black
+
+# window management
+floating_modifier $mod
+bindsym $mod+Return exec $term
+bindsym $mod+shift+q kill
+bindsym $mod+g exec --no-startup-id $searcher
+bindsym $mod+d exec --no-startup-id $menu
+bindsym $mod+p exec --no-startup-id $python_shell
+bindsym $mod+x exec --no-startup-id $broot
+bindsym $mod+i exec --no-startup-id $install_pkg
+bindsym $mod+shift+i exec --no-startup-id $uninstall_pkg
+bindsym $mod+n exec --no-startup-id makoctl dismiss
+
+bindsym $mod+$left focus left
+bindsym $mod+$right focus right
+bindsym $mod+$up focus up
+bindsym $mod+$down focus down
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+#bindsym $mod+Shift+minus split h
+#bindsym $mod+Shift+backslash split v
+#bindsym $mod+Shift+equal split toggle
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+s sticky toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+bindsym $mod+f fullscreen
+
+# switch workspaces
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Tab workspace back_and_forth
+
+# move workspaces between monitors
+bindsym $mod+Prior move workspace to up  # Prior is also called PageUp
+bindsym $mod+Next move workspace to down # Next is also called PageDown
+bindsym $mod+q move workspace to left
+bindsym $mod+End move workspace to right
+
+# move containers between workspaces
+set $move_container floating disable, sticky disable, move container to workspace number
+bindsym $mod+Shift+1 $move_container $ws1
+bindsym $mod+Shift+2 $move_container $ws2
+bindsym $mod+Shift+3 $move_container $ws3
+bindsym $mod+Shift+4 $move_container $ws4
+bindsym $mod+Shift+5 $move_container $ws5
+bindsym $mod+Shift+6 $move_container $ws6
+bindsym $mod+Shift+7 $move_container $ws7
+bindsym $mod+Shift+8 $move_container $ws8
+bindsym $mod+Shift+9 $move_container $ws9
+bindsym $mod+Shift+0 $move_container $ws10
+
+# scratchpad
+bindsym $mod+Shift+backspace move scratchpad
+bindsym $mod+backspace scratchpad show
+# make fullscreen window sticky and floating on the top right corner of the screen
+bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 1500 20
+
+# reload config / restart
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Idle configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f'
+
+# MULTIMEDIA CONTROL KEYS
+bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5
+bindsym XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute
+
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+
+# SCREENSHOTS
+bindsym --release print exec --no-startup-id "$HOME/.local/bin/screenshot.sh"
+bindsym --release shift+print exec --no-startup-id "$HOME/.local/bin/screenshot_selection.sh"
+
+# SCREENREC
+# These work but we have to be able to stop the recording
+
+bindsym --release $alt+print exec --no-startup-id $screenrec
+bindsym --release $alt+shift+print exec --no-startup-id $screenrec_selection
+
+# fancy mode stuff
+set $mode_power <span>        </span><span background='#fabd2f' foreground='#000000'> power </span> <span foreground='#ebdbb2'>l</span>ock <span foreground='#ebdbb2'>e</span>xit <span foreground='#ebdbb2'>s</span>uspend <span foreground='#ebdbb2'>r</span>eboot <span foreground='#ebdbb2'>p</span>oweroff
+mode --pango_markup "$mode_power" {
+    bindsym l mode "default", exec --no-startup-id swaylock
+    bindsym e mode "default", exec --no-startup-id swaymsg exit
+    bindsym s mode "default", exec --no-startup-id sleep
+    bindsym h mode "default", exec --no-startup-id ZZZ
+    bindsym r mode "default", exec --no-startup-id shutdown -r now
+    bindsym p mode "default", exec --no-startup-id shutdown -P now
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+e exec swaylock
+bindsym $mod+Control+escape mode "$mode_power"
+
+mode "resize" {
+        # same bindings, but for the arrow keys
+        bindsym $up resize grow height 10 ppt
+        bindsym $right resize shrink width 10 ppt
+        bindsym $down resize shrink height 10 ppt
+        bindsym $left resize grow width 10 ppt
+        bindsym shift+$up resize grow height 5 ppt
+        bindsym shift+$right resize shrink width 5 ppt
+        bindsym shift+$down resize shrink height 5 ppt
+        bindsym shift+$left resize grow width 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+default_border pixel
+
+for_window [app_id="pavucontrol"] $popup-center
+for_window [app_id="popup-term-center"] $popup-center
+for_window [app_id="popup-term-max"] $popup-max
+for_window [app_id="popup-term-top"] $popup-top
+
+# bugs with back and forth
+#for_window [class="firefox"] move workspace $ws2
+
+assign [instance="gimp"] $ws8
+for_window [instance="gimp"] urgent enable
+
+assign [app_id="libreoffice"] $ws7
+for_window [app_id="libreoffice"] urgent enable
+
+# Must be before browser as window_role is browser for
+# slack as well.
+assign [instance="slack"] $ws6
+for_window [instance="slack"] urgent enable
+
+assign [window_role="(?i)browser"] $ws2
+for_window [window_role="browser"] urgent enable
+
+bar {
+  #tray_output eDP-1
+  swaybar_command waybar
+}
+
+# AUTOSTART
+# TODO run with systemd?
+#exec --no-startup-id blueman-applet &  # bluetooth applet
+# the next line is necessary for mako, see https://github.com/emersion/mako
+exec --no-startup-id dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus &
+exec --no-startup-id mako &            # notifications
+#exec --no-startup-id dropbox &         # dropbox
+
+# exec --no-startup-id dunst &         # old notifications
+#exec --no-startup-id kanshi            # automatic screen config
+#exec --no-startup-id kanshi            # automatic screen config
