@@ -87,6 +87,10 @@ map <Space> <Leader>
 " Use escape go to normal mode in terminal
 tnoremap <Esc> <C-\><C-n>
 
+" Move to the next paragraph
+nnoremap <C-j> }
+nnoremap <C-k> {
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Conquer of Completion (coc)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
