@@ -245,17 +245,23 @@ for_window [app_id="popup-term-top"] $popup-top
 # bugs with back and forth
 #for_window [class="firefox"] move workspace $ws2
 
+# Gimp
 assign [instance="gimp"] $ws8
 for_window [instance="gimp"] urgent enable
 
+# Libre office
 assign [app_id="libreoffice"] $ws7
 for_window [app_id="libreoffice"] urgent enable
+assign [app_id="soffice"] $ws7
+for_window [app_id="soffice"] urgent enable
 
+# Slack
 # Must be before browser as window_role is browser for
 # slack as well.
 assign [instance="slack"] $ws6
 for_window [instance="slack"] urgent enable
 
+# Browsers
 assign [window_role="(?i)browser"] $ws2
 for_window [window_role="browser"] urgent enable
 
