@@ -10,6 +10,9 @@ Plug 'junegunn/fzf.vim'
 " Start screen
 Plug 'mhinz/vim-startify'
 
+" Change to the root folder
+Plug 'airblade/vim-rooter'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
