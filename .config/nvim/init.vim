@@ -13,18 +13,20 @@ Plug 'mhinz/vim-startify'
 " Change to the root folder
 Plug 'airblade/vim-rooter'
 
+" Theme
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"set termguicolors
-"colorscheme dracula
+set termguicolors
+colorscheme gruvbox
 
 " Transparent background
-hi Normal guibg=NONE ctermbg=NONE
-"hi! link Include DraculaOrange
+highlight Normal guibg=NONE ctermbg=NONE
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fzf
