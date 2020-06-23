@@ -52,6 +52,9 @@ set number
 " Show relative numbers
 set relativenumber
 
+" Show ruler
+set ruler
+
 " Always show the sign column
 set signcolumn=yes
 highlight clear SignColumn
