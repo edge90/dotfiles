@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " fzf for vim
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Start screen
