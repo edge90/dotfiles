@@ -22,6 +22,9 @@ Plug 'vifm/vifm.vim'
 " Nerd commenter
 Plug 'preservim/nerdcommenter'
 
+" Quick scope
+Plug 'unblevable/quick-scope'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
