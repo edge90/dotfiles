@@ -43,6 +43,7 @@ set $ws10 "10:misc"
 set $menu $term --class "popup-term-center" --title "Launcher" -e "$HOME/.local/bin/launcher.sh"
 set $searcher $term --class "popup-term-top" --title "Search" -e "$HOME/.local/bin/searcher.sh"
 set $python_shell $term --class "popup-term-max" --title "Python shell" -e "$HOME/.local/bin/python_shell.sh"
+set $resources $term --class "popup-term-max" --title "Resources" -e "$HOME/.local/bin/resources.sh"
 set $broot $term --class "popup-term-max" --title "Explore" -e "$HOME/.local/bin/explorer.sh" &
 set $install_pkg $term --class "popup-term-top" --title "Install package" -e "$HOME/.local/bin/install_pkg.sh"
 set $uninstall_pkg $term --class "popup-term-top" --title "Uninstall package" -e "$HOME/.local/bin/uninstall_pkg.sh"
@@ -99,6 +100,7 @@ bindsym $mod+shift+q kill
 bindsym $mod+g exec --no-startup-id $searcher
 bindsym $mod+d exec --no-startup-id $menu
 bindsym $mod+p exec --no-startup-id $python_shell
+bindsym $mod+m exec --no-startup-id $resources
 bindsym $mod+x exec --no-startup-id $broot
 bindsym $mod+i exec --no-startup-id $install_pkg
 bindsym $mod+shift+i exec --no-startup-id $uninstall_pkg
