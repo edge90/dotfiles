@@ -107,6 +107,7 @@ tnoremap <Esc> <C-\><C-n>
 " Move to the next paragraph
 nnoremap <C-j> }
 nnoremap <C-k> {
+nnoremap <C-w>t :botright vsplit +term<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Conquer of Completion (coc)
