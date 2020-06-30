@@ -19,6 +19,9 @@ Plug 'morhetz/gruvbox'
 " Vifm file explorer
 Plug 'vifm/vifm.vim'
 
+" Nerd commenter
+Plug 'preservim/nerdcommenter'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
