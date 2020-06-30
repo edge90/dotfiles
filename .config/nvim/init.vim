@@ -16,6 +16,9 @@ Plug 'airblade/vim-rooter'
 " Theme
 Plug 'morhetz/gruvbox'
 
+" Vifm file explorer
+Plug 'vifm/vifm.vim'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
