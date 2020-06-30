@@ -107,8 +107,8 @@ s() {
 ########################################
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source ~/.config/fzf/completion.zsh
+source ~/.config/fzf/key-bindings.zsh
 
 fzf-cd-parent-widget() {
     local dir=$(list-parent-dirs | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf)
