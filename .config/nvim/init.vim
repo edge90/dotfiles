@@ -111,6 +111,12 @@ nnoremap <C-j> }
 nnoremap <C-k> {
 nnoremap <C-w>t :botright vsplit +term<CR>
 
+" Write
+nmap <Leader>w :write<CR>
+
+" Quit
+nmap <Leader>q :quit<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Conquer of Completion (coc)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
