@@ -48,6 +48,7 @@ map <Leader>h :History<CR>
 "map <Leader>s :GFiles?<CR>
 "map <Leader>t :Tags<CR>
 map <Leader>m :make<CR>
+map <Leader>s :Rg<Space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Behaviour
