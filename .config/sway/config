@@ -64,6 +64,8 @@ output DVI-I-1 {
   scale 1.0
 }
 
+include ~/.config/sway/config.local
+
 input type:keyboard {
   xkb_layout se
   xkb_options caps:escape
