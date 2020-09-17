@@ -151,10 +151,10 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
 
 # move workspaces between monitors
-bindsym $mod+Prior move workspace to up  # Prior is also called PageUp
-bindsym $mod+Next move workspace to down # Next is also called PageDown
-bindsym $mod+q move workspace to left
-bindsym $mod+End move workspace to right
+bindsym $mod+$alt+h workspace prev
+bindsym $mod+$alt+l workspace next
+bindsym $mod+$alt+Shift+h move container to workspace prev, workspace prev
+bindsym $mod+$alt+Shift+l move container to workspace next, workspace next
 
 # move containers between workspaces
 set $move_container floating disable, sticky disable, move container to workspace number
