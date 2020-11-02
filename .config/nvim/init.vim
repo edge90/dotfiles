@@ -95,6 +95,7 @@ set autoindent
 
 " File specific config
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+autocmd FileType xml setlocal tabstop=2 shiftwidth=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
