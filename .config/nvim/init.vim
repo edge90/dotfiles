@@ -104,13 +104,21 @@ autocmd FileType xml setlocal tabstop=2 shiftwidth=2
 " Leader key
 map <Space> <Leader>
 
-" Use escape go to normal mode in terminal
-tnoremap <Esc> <C-\><C-n>
+" Toggle normal / insert mode
+inoremap <C-Space><C-Space> <Esc>
+nnoremap <C-Space><C-Space> i
+tnoremap <C-Space><C-Space> <C-\><C-n>
+tnoremap <C-Space><Esc> <C-\><C-n>
+vnoremap <C-Space><C-Space> <Esc>
 
-" Move to the next paragraph
-nnoremap <C-j> }
-nnoremap <C-k> {
+tnoremap <Leader>odiaeresis <C-\><C-n>
+
+" Escape
+tnoremap <C-w><Esc> <C-\><C-n>
+
+" Terminal
 nnoremap <C-w>t :botright vsplit +term<CR>
+nnoremap <Enter> i<CR>
 
 " Write
 nmap <Leader>w :write<CR>
