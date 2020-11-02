@@ -44,10 +44,10 @@ highlight Normal guibg=NONE ctermbg=NONE
 map <Leader>b :Buffers<CR>
 map <Leader>f :Files<CR>
 map <Leader>h :History<CR>
-"map <Leader>g :GFiles<CR>
-"map <Leader>s :GFiles?<CR>
+map <Leader>vf :GFiles<CR>
+map <Leader>vs :GFiles?<CR>
 "map <Leader>t :Tags<CR>
-map <Leader>m :make<CR>
+map <Leader>mm :make<CR>
 map <Leader>s :Rg<Space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
