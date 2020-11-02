@@ -21,10 +21,14 @@ HISTFILE=~/.zsh_history
 ########################################
 # Environment
 ########################################
-export EDITOR=nvim
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    export EDITOR=nvim-terminal-edit.py
+else
+    export EDITOR=nvim
+fi
 export PAGER=less
 
-# Isn't really needed as it's set in .pam_environment too
+# Isn't really needed as it's set in .pam_environment as well
 export PATH=$HOME/.local/bin:$PATH
 
 ########################################
