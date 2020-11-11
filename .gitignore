@@ -1,0 +1,40 @@
+
+" Ignore everything as default
+*
+
+" Go down in subfolders
+!*/
+
+" Whitelist these folders
+!.config/alacritty/*
+!.config/fzf/*
+!.config/locale.conf
+!.config/nvim/**
+!.config/sway/*
+!.config/swaylock/*
+!.config/systemd/user/*
+!.config/waybar/*
+!.gitmodules
+!.local/bin/explorer.sh
+!.local/bin/install_pkg.sh
+!.local/bin/launcher.sh
+!.local/bin/mirror_update.sh
+!.local/bin/nvim-terminal-edit.py
+!.local/bin/python_shell.sh
+!.local/bin/resources.sh
+!.local/bin/screenrecorder.sh
+!.local/bin/screenrecorder_selection.sh
+!.local/bin/screenshot.sh
+!.local/bin/screenshot_selection.sh
+!.local/bin/searcher.sh
+!.local/bin/spotifyd_on_song_change_hook.sh
+!.local/bin/uninstall_pkg.sh
+!.local/share/nvim/site/pack/plugins/**
+!.local/share/sway/*
+!.pam_environment
+!.ssh/config
+!.zshrc
+!LICENSE
+!README.md
+!.gitignore
+!.gitmodules
