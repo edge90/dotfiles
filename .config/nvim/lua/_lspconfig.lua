@@ -1,7 +1,6 @@
-local lsp = require "nvim_lsp"
+local lsp = require "lspconfig"
 
 local on_attach = function(client)
-    require "diagnostic".on_attach(client)
     require "completion".on_attach(client)
 end
 
