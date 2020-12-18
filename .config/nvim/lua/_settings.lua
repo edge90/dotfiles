@@ -16,6 +16,7 @@ o.clipboard = "unnamedplus"
 o.mouse = "a"
 o.shortmess = "atI"
 o.ve = "onemore"
+o.inccommand = "nosplit"
 
 -- interface
 api.nvim_command("colorscheme gruvbox")
