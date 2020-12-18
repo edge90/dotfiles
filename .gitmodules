@@ -22,3 +22,18 @@
 [submodule ".local/share/nvim/site/pack/plugins/start/lazygit.nvim"]
 	path = .local/share/nvim/site/pack/plugins/start/lazygit.nvim
 	url = https://github.com/kdheepak/lazygit.nvim.git
+[submodule ".local/share/nvim/site/pack/plugins/start/telescope.nvim"]
+	path = .local/share/nvim/site/pack/plugins/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule ".local/share/nvim/site/pack/plugins/start/popup.nvim"]
+	path = .local/share/nvim/site/pack/plugins/start/popup.nvim
+	url = https://github.com/nvim-lua/popup.nvim
+[submodule ".local/share/nvim/site/pack/plugins/start/plenary.nvim"]
+	path = .local/share/nvim/site/pack/plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule ".local/share/nvim/site/pack/plugins/start/nvim-toggleterm.lua"]
+	path = .local/share/nvim/site/pack/plugins/start/nvim-toggleterm.lua
+	url = https://github.com/akinsho/nvim-toggleterm.lua.git
+[submodule ".local/share/nvim/site/pack/plugins/start/neomux"]
+	path = .local/share/nvim/site/pack/plugins/start/neomux
+	url = https://github.com/nikvdp/neomux.git

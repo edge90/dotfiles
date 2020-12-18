@@ -62,4 +62,33 @@ o.swapfile = false
 o.undofile = false
 o.writebackup = false
 
+-- Lazygit
 vim.api.nvim_set_keymap('n', '<leader>vs', ':LazyGit<CR>', { noremap = true, silent = true })
+
+-- Terminal
+vim.api.nvim_set_keymap('t', '<C-\\><Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+
+-- Navigate with hjkl
+vim.api.nvim_set_keymap('i', '<C-h>', '<Esc><C-w><C-h>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-j>', '<Esc><C-w><C-j>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-k>', '<Esc><C-w><C-k>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-l>', '<Esc><C-w><C-l>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w><C-j>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w><C-k>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('t', '<C-h>', '<C-\\><C-n><C-w><C-h>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-j>', '<C-\\><C-n><C-w><C-j>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-k>', '<C-\\><C-n><C-w><C-k>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-l>', '<C-\\><C-n><C-w><C-l>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('v', '<C-h>', '<Esc><C-w><C-h>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-j>', '<Esc><C-w><C-j>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-k>', '<Esc><C-w><C-k>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-l>', '<Esc><C-w><C-l>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('i', '<C-w><C-w>', '<Esc><C-w><C-w>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-w><C-w>', '<C-\\><C-n><C-w><C-w>', { noremap = true, silent = true })
+
